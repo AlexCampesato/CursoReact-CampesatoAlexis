@@ -1,12 +1,16 @@
-import logo from './logo.svg';
+
+import NavBar from './components/NavBar';
 import './App.css';
+import ItemListContainer from './components/ItemListContainer';
+import ItemCount from './components/ItemCount';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Mi aplicacion de React</h1>
-      </header>
+    <div>
+      <NavBar />
+      <ItemListContainer />
+      <ItemCount />
     </div>
   );
 }
