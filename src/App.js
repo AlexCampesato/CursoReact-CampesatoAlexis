@@ -10,7 +10,6 @@ function App() {
     <div>
       <NavBar />
       <ItemListContainer />
-      <ItemCount />
     </div>
   );
 }
