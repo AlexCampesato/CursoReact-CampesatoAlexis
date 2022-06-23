@@ -1,26 +1,12 @@
-import { useEffect } from "react";
+import './ItemList.css';
+import Item from './Item';
 
-
-export default function ItemList({products}){
-    
-    
-
+export default function ItemList ({items}){
     return (
-        <div>
-
-           {
-                products.map(function(producto){
-                    return(
-                        <div key={producto.id}>
-                            <img src={producto.pictureUrl} alt="Imagen del producto"/>
-                            <p className="price">{producto.price}</p>
-                            <p className="title">{producto.title}</p>
-                        </div>
-                    )
-                })
-            
-                
-            }
+        <div className='ItemList-container'>
+            {items.map((item)=> (
+                <Item key={item.id} item={item} />
+            ))}
         </div>
     );
 }

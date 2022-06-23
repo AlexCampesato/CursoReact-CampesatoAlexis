@@ -1,22 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import './ItemListContainer.css';
-import ItemCount from './ItemCount';
+import Counter from './Counter';
 
 import { getItems } from '../api/api';
 import ItemList from './ItemList';
+import ItemDetail from './ItemDetail';
 
 
 
+export default function ItemListContainer({greetings}) {
 
-export default function ItemListContainer() {
-
-    const[products, setProducts]=useState([]);
+    const[ItemsList, setItemsList] = useState([]);
 
     useEffect(() =>{
-        getItems().then(function(products){
-            console.log(products);
-            setProducts(products);
-        })
+        getItems().then((items)=>{
+            
+            setItemsList(items);
+        }).catch((error)=>{
+            console.log(error);
+        });
 
     }, []);
 
@@ -24,8 +26,8 @@ export default function ItemListContainer() {
 
 return (<div>
     <p class="TextPino">PinoBlanco fabrica de muebles industriales</p>
-    { products.length > 0 ? <ItemList products={products} /> : <p>cargando...</p>}
-    <ItemCount stock={5} initial={1} />
+    { ItemsList.length === 0 ? <p>cargando...</p> : <ItemList items={ItemsList} /> }
+    
     </div>
 );
 }
