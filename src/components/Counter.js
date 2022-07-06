@@ -12,7 +12,10 @@ const Counter = ({stock,initial,onAdd}) => {
 
     const addToCart=() => {
             onAdd(itemCounter);
+           
         }
+
+    
     
     return(
         <div className="item-count-container">

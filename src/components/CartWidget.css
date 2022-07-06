@@ -1,3 +1,10 @@
 .Carrito{
     width: 3rem;
     }
+.cantidad-cart{
+    position: absolute;
+    top: -5px;
+    left: 73%;
+    color: black;
+    display: inline;
+}

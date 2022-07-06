@@ -1,0 +1,18 @@
+.item-detail{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+    .img-detail{
+        width: 400px;
+        height: auto;
+
+    }
+    .item-title{
+        text-align: center;
+    }
+    .description{
+        text-align: left;
+    }

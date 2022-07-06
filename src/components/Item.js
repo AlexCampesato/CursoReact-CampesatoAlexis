@@ -7,9 +7,9 @@ export default function Item({item}) {
             <Link to={`/producto/${item.id}`}>
                 <img className='item-picture' src={item.pictureUrl} alt="Imagen del producto"/>
             </Link><div className="detail-container">
-                
-                <p className="item-price">USD  {item.price}</p>
                 <p className="item-title">{item.title}</p>
+                <p className="item-price">$ {item.price}</p>
+                
             </div>
             
         </div>

@@ -23,8 +23,17 @@ const CartContextProvider = ({children}) =>  {
         setCart([]);
     };
 
+    const deleteItem = (id) => {
+
+        const copy = [...cart]
+        
+        const filterItem = copy.filter(item => item.id !== id)
+        
+        setCart(filterItem)
+    }
+
     return (
-        <CartContext.Provider value={{cart, addToCart, vaciarCarrito}}>
+        <CartContext.Provider value={{cart, addToCart, vaciarCarrito, deleteItem}}>
             {children}
         </CartContext.Provider>
     );

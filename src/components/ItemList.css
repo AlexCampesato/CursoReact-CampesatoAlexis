@@ -14,8 +14,8 @@ margin-block-end: 1em;}
     .item-container{ 
 
         border: 7px;
-        background-color: blueviolet;
-        border-width: 3px;
+        background-color: rgb(121, 117, 116);
+        border-width: 1px;
         border-style: solid;
         width: 300px;
         height: 300px;
@@ -27,7 +27,10 @@ margin-block-end: 1em;}
          }
 
         .item-price{
-        
+        margin: 0px;
+        }
+        .item-title{
+            margin: 0px;
         }
 
         

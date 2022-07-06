@@ -25,7 +25,7 @@ export default function ItemListContainer({greetings}) {
 
 
 return (<div>
-    <p class="TextPino">PinoBlanco fabrica de muebles industriales</p>
+    <p class="TextPino">Ofertas</p>
     { ItemsList.length === 0 ? <p>cargando...</p> : <ItemList items={ItemsList} /> }
     
     </div>

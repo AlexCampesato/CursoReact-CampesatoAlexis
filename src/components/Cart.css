@@ -1,0 +1,27 @@
+.eliminar-item{
+    width: 80px;
+    height: 55px;
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 1rem;
+    background-color: #A21502;
+    color: beige;
+    margin-top: 15%;
+}
+.cart-container{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    background-color: rgb(179, 174, 173);
+    border-width: 3px;
+    border-style: solid;
+}
+.img{
+    width: 10rem;
+    height: 10rem;
+   
+}
+
