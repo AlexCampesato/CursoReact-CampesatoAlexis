@@ -1,44 +1,19 @@
-const products = [
-    {
-        id: 1,
-        stock:8,
-        title: 'Mesa Estilo Nordico',
-        description: 'Enchapado de melamina blanco absoluto de 20mm de espesor. Biselada, un distintivo de nuestras mesas.',
-        price: 30000,
-        pictureUrl: 'https://http2.mlstatic.com/D_NQ_NP_655509-MLA32389212184_102019-O.webp'
-    },
-    {
-        id: 2,
-        stock: 4,
-        title: 'Silla escandinava',
-        description: 'Esta versión viene desarmada y lista para que puedas ensamblarla en tu hogar en tan solo 5 minutos. Incluye su completo Kit de armado ',
-        price: 2200,
-        pictureUrl: 'https://desillas.com/img/productos/size_1/TCRLFK_1.jpg'
-    },
-    {
-        id: 3,
-        stock: 4,
-        title: 'Sillon 2 Cuerpos',
-        description: 'Estructura en Madera Saligna de 1 pulgada, perfectamente armada, encuadrada, encolada y clavada, fortalecida con escuadras brindando mayor durabilidad',
-        price: 22000,
-        pictureUrl: 'https://www.megatone.net/images/articulos/zoom2x/270/MKT0011AWO.jpg'
-    },{
-        id: 4,
-        stock: 6,
-        title: 'Escritorio',
-        description: 'escritorio industrial',
-        price: 12000,
-        pictureUrl: 'data:image/jpeg;base64,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'
-    },
-    
-
-]
+import {getDocs, collection} from 'firebase/firestore';
+import {db} from '../components/firebase';
 
 const promesa = new Promise(function(resolve, reject){
 
-    setTimeout(function(){
-        resolve(products);
-    }, 2000);
+    const itemCollection = collection(db,"producto")
+
+        getDocs(itemCollection)
+        .then(snapshot=>{
+            const products = snapshot.docs.map((doc)=>({id: doc.id, ...doc.data()}))
+            resolve(products)
+            console.log(products)
+        })
+        .catch(error=>{
+            console.log(error)
+        })
 
 });
 
