@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 const Cart=() =>{
 
-    const {cart, vaciarCarrito, deleteItem}=useContext(CartContext);
+    const {cart, vaciarCarrito, deleteItem, confirmarCompra}=useContext(CartContext);
     const [isCartEmpty, setIsCartEmpty] = useState(true)
 
 
@@ -39,10 +39,13 @@ const Cart=() =>{
                     <h3>El precio total a pagar es: {precioTotal}</h3>
                     
                     <button onClick={vaciarCarrito}>Vaciar Carrito</button>
+                    <button onClick={confirmarCompra}>Comprar</button>
+                    
                 </ul>
-    )
+                
+    )}
 
     
-}};
+};
 
 export default Cart;

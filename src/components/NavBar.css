@@ -16,4 +16,18 @@ ul li{
     font-size: 35px;
     text-decoration: 'none';
 }
+.btn-item{
+    display: inline-block;
+    border-radius: 4px;
+    background-color: transparent;
+    border-width: 3px;
+    border-style: solid;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding: 5px;
+    width: 65px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-left: 20px;}
 

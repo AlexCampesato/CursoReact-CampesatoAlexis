@@ -13,7 +13,8 @@ return (<div>
         <li>Nosotros</li>
         <li>Productos</li>
         <li>Contacto</li>
-        <Link to="/cart"><li><Cartwidget /></li></Link>
+        <Link to="/item/add"><li><button className='btn-item'>Agregar item</button></li></Link>
+        <Link to="/cart"><li ><Cartwidget /></li></Link>
     </ul>
     <section></section>
     
