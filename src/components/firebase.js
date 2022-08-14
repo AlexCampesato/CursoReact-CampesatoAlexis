@@ -3,7 +3,18 @@ import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import {getFirestore} from "firebase/firestore"
+import {
+  getFirestore,
+  getDocs,
+  getDoc,
+  query,
+  where,
+  doc,
+  collection,
+  setDoc,
+  addDoc,
+  Timestamp,
+} from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyCtxyLHmsmVV2jtD2eptqrO91HC1CuiJTY",
@@ -16,5 +27,23 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+const appFirestore = getFirestore(app);
+
+export async function createBuyOrder (dataOrder){
+  const ordersCollectionRef = collection(appFirestore, "orders");
+  const dateTimestamp = Timestamp.now();
+
+  const dataOrderWithDate ={
+    buyer: dataOrder.buyer,
+    items: dataOrder.items,
+    total: dataOrder.total,
+    date: dateTimestamp
+  };
+
+  const orderCreated = await addDoc(ordersCollectionRef, dataOrderWithDate);
+  console.log("addd:", orderCreated.id)
+  return orderCreated;
+}
 
 export const db = getFirestore(app);

@@ -10,9 +10,10 @@ return (<div>
     <ul className='ul-nav'>
         
         <Link to="/" style={{ textDecoration: 'none'}}><li className='nav-title'>PINO BLANCO</li></Link>
-        <li>Nosotros</li>
-        <li>Productos</li>
-        <li>Contacto</li>
+        <Link to="/category/moderno" style={{ textDecoration: 'none'}}><li className='nav-title'>Moderno</li></Link>
+        <Link to="/category/antiguo" style={{ textDecoration: 'none'}}><li className='nav-title'>Antiguo</li></Link>
+        <Link to="/category/industrial" style={{ textDecoration: 'none'}}><li className='nav-title'>Industrial</li></Link>
+        
         <Link to="/item/add"><li><button className='btn-item'>Agregar item</button></li></Link>
         <Link to="/cart"><li ><Cartwidget /></li></Link>
     </ul>

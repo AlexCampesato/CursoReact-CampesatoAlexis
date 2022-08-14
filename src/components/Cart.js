@@ -2,11 +2,27 @@ import React, {useContext, useEffect, useState} from "react";
 import { CartContext } from "../context/CartContext";
 import './Cart.css';
 import {Link} from 'react-router-dom';
-
+import { createBuyOrder } from "./firebase";
 const Cart=() =>{
 
-    const {cart, vaciarCarrito, deleteItem, confirmarCompra}=useContext(CartContext);
+    const {cart, vaciarCarrito, deleteItem, precioTotal}=useContext(CartContext);
     const [isCartEmpty, setIsCartEmpty] = useState(true)
+
+    function handleBuyOrder(){
+        const dataOrder ={
+            buyer: {
+                name:"jose",
+                phone:"1545458787",
+                email: "jospepe@coder.com"
+            },
+            items: cart,
+            total: precioTotal
+        }
+        createBuyOrder(dataOrder).then((orderDataCreated)=>{
+            vaciarCarrito();
+            alert("Su orden de compra es"+orderDataCreated.id)
+        });
+    }
 
 
     useEffect(() => {
@@ -39,7 +55,7 @@ const Cart=() =>{
                     <h3>El precio total a pagar es: {precioTotal}</h3>
                     
                     <button onClick={vaciarCarrito}>Vaciar Carrito</button>
-                    <button onClick={confirmarCompra}>Comprar</button>
+                    <button onClick={handleBuyOrder}>Comprar</button>
                     
                 </ul>
                 

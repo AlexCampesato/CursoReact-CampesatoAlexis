@@ -36,8 +36,15 @@ function App() {
             <Route
             exact
             path="/item/add"
-            element={<AddItemContainer />} />
+            element={<AddItemContainer />} />  
+            <Route
+             path="/category/:categoryId"
+             element={<ItemListContainer />}
+            />
+            
+    
           </Routes>
+         
         </div>
       </main>
 
